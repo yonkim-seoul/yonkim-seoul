@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>오늘 나의 기분은?</h1>
+<hr>
+
+<form action="/create" method="POST">
+    <table>
+        <tr>
+            <td><input type="text" name="date" placeholder="날짜입력(예: 20220103 )"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="name" placeholder="이름을 입력하세요"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="mood" placeholder="기분을 입력하세요"></td>
+        </tr>
+    </table>
+    <input type="submit" value="보내기">
+</form>
+<table>
+    <% for(let data of results) { %>
+        <tr>
+            <td><%= data.date %></td>
+            <td><%= data.name %></td>
+            <td><%= data.mood %></td>
+        </tr>
+    <% } %>
+</table>
+</body>
+</html>
